@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mountain Runner Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="dogelogo.png">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  
+  <div class="title">
+    <div class="media-logo">
+      <div class="x">
+        <img src="./x.jpg" alt="">
+      </div>
+      <div class="telegram">
+        <img src="./telegram.jpg" alt="">
+      </div>
+    </div>
+    <div class="little-title">DOGESTAN</div>
+    <div class="small-description">The Most Fearless Meme in Crypto!</div>
+  </div>
+  
+  <div class="game-container">
+    <button id="start-button">Start Game!</button>
+    <div id="character"></div> 
+    <div id="mountain"></div>
+    <div id="ground"></div>
+    <div id="score">Score: 0</div>
+    <div id="jump-button">Jump</div> <!-- Jump button for mobile -->
+    <div class="responsivecharacter">
+        <img src="./dogestan_character.png" alt="">
+      </div>
+  </div>
+  <audio id="game-music" src="mus.mp3" loop></audio>
+
+  <!-- Game Over Modal -->
+<div id="game-over-modal" class="modal">
+  <div class="modal-content">
+    <button id="close-modal" class="close-button">&times;</button>
+    <h2>Game Over!</h2>
+    <p id="final-score">Your Score: 0</p>
+    <button id="restart-button">Play Again</button>
+  </div>
+</div>
+<div class="container1">
+  <span id="codeText">J3TqbUgHurQGNxWtT88UQPcMNVmrL875pToQZdrkpump</span>
+  <button class="copy-btn" onclick="copyText()">📋</button>
+</div>
+
+<script>
+  function copyText() {
+      const text = document.getElementById("codeText").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+          alert("Copied to clipboard!");
+      }).catch(err => {
+          console.error("Failed to copy text: ", err);
+      });
+  }
+</script>
+
+
+<div class="dogestan-container">
+        <div class="dogestan-box">
+            <h2>🐕💪 Strength of Dagestan, Spirit of Doge</h2>
+            <p>Dogestan merges the fearless energy of Dagestan with the legendary status of Dogecoin, creating a meme coin that’s as tough as it is fun.</p>
+        </div>
+        <div class="dogestan-box">
+            <h3>⚡ Unbreakable & Unstoppable</h3>
+            <p>Built on solid blockchain foundations, Dogestan is designed for security, resilience, and long-term success—because real strength never backs down.</p>
+        </div>
+        <div class="dogestan-box">
+            <h3>🌍 A Community of Warriors</h3>
+            <p>Whether you're here to invest, meme, or conquer the crypto world, Dogestan welcomes all who thrive on courage, strategy, and a good sense of humor.</p>
+        </div>
+        <div class="dogestan-box">
+            <h3>😂 Memes with Muscle</h3>
+            <p>From battle-tested tactics to meme-worthy moments, Dogestan proves that crypto can be both entertaining and powerful.</p>
+        </div>
+      </div>
+      
+          <div class="character">
+        <img src="./dogestan_character.png" alt="">
+      </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

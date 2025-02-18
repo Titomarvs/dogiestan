@@ -1,0 +1,390 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(./bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border: 2px solid #000;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+#character {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  background-image: url('character.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#mountain {
+  position: absolute;
+  bottom: 20%;
+  right: -10%;
+  width: 50px;
+  height: 50px;
+  background-image: url('mountain.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background-color: #228B22;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: #000;
+}
+
+/* Responsive Jump Button */
+#jump-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  background-color: #ff5733;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #jump-button {
+    display: block;
+  }
+}
+
+/* Game Over Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content button:hover {
+  background-color: #e64a2e;
+}
+
+/* Title Section */
+.title {
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 1000;
+  background-color: #00000091;
+}
+
+.kaushan-script-regular {
+  font-family: "Kaushan Script", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.little-title {
+  font-family: "Kaushan Script", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.small-description {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Dogestan Section */
+.dogestan-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.dogestan-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: calc(50% - 20px);
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.dogestan-box:hover {
+  transform: translateY(-10px);
+}
+
+.dogestan-box h2,
+.dogestan-box h3 {
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+.dogestan-box p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.media-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 1100;
+}
+
+.media-logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.media-logo img:hover {
+  transform: scale(1.1);
+}
+
+#start-button {
+  position: absolute;
+  /* or 'fixed' if you want it to stay on screen */
+  top: 75%;
+  right: 20px;
+  z-index: 99999;
+  padding: 15px 30px;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#start-button:hover {
+  background-color: #e64a2e;
+  transform: scale(1.05);
+}
+
+#start-button:active {
+  transform: scale(0.98);
+}
+
+/* Center the button */
+#start-button {
+  display: block;
+  margin: 20px auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #start-button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    position: relative;
+    left: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  #start-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .media-logo img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dogestan-box {
+    width: 100%;
+  }
+
+  .little-title {
+    font-size: 2rem;
+  }
+
+  .small-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dogestan-box {
+    width: 100%;
+  }
+
+  .little-title {
+    font-size: 1.8rem;
+  }
+
+  .small-description {
+    font-size: 0.9rem;
+  }
+}
+
+.character {
+  position: absolute;
+  top: 9%;
+  left: 57%;
+
+}
+
+.character img {
+  width: 80% !important;
+}
+
+@media (max-width: 768px) {
+  .character {
+    display: none;
+  }
+}
+
+.responsivecharacter {
+  display: none;
+  position: absolute;
+  top: 9%;
+  left: 57%;
+  z-index: 1;
+}
+
+/* Show on Tablets and Smaller Screens */
+@media (max-width: 1024px) {
+  .responsivecharacter {
+    display: block;
+    position: absolute;
+    top: 9%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+  }
+
+  .responsivecharacter img {
+    width: 80%;
+    max-width: 150px;
+    height: auto;
+    margin-top: 290%;
+    margin-left: 120%;
+  }
+}
+
+
+
+.container1 {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #153450;
+  padding: 10px;
+  border-radius: 10px;
+}
+#codeText {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #ddd;
+}
+.copy-btn {
+  background-color: #2d89ef;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.copy-btn:hover {
+  background-color: #1e60d4;
+}
+
+
